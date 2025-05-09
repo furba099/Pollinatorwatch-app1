@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import beeImage from '../assets/bee.jpg';        // 🐝 main bee image
+import flowerImage from '../assets/Flower.jpg';  // 🌸 second image
+import './UploadSighting.css';
 
 function UploadSighting() {
   const [imageUrl, setImageUrl] = useState('');
@@ -22,34 +25,43 @@ function UploadSighting() {
   };
 
   return (
-    <div>
-      <h2>Upload Bee Sighting</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Image URL"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-          required
-        /><br />
+    <div className="upload-container">
+      <div className="upload-card">
+        <div className="upload-images">
+          <img src={beeImage} alt="Bee" className="upload-icon" />
+          <img src={flowerImage} alt="Flower" className="upload-icon" />
+        </div>
 
-        <input
-          type="text"
-          placeholder="Location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          required
-        /><br />
+        <h2>🐝 Upload Bee Sighting</h2>
 
-        <select value={species} onChange={(e) => setSpecies(e.target.value)}>
-          <option value="Apis mellifera">Apis mellifera</option>
-          <option value="Bombus terrestris">Bombus terrestris</option>
-          <option value="Other">Other</option>
-        </select><br />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Image URL"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+            required
+          /><br />
 
-        <button type="submit">Submit Sighting</button>
-      </form>
-      {message && <p>{message}</p>}
+          <input
+            type="text"
+            placeholder="Location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            required
+          /><br />
+
+          <select value={species} onChange={(e) => setSpecies(e.target.value)}>
+            <option value="Apis mellifera">Apis mellifera</option>
+            <option value="Bombus terrestris">Bombus terrestris</option>
+            <option value="Other">Other</option>
+          </select><br />
+
+          <button type="submit">Submit Sighting</button>
+        </form>
+
+        {message && <p className="message">{message}</p>}
+      </div>
     </div>
   );
 }

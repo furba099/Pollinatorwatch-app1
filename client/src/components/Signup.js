@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import beeImage from '../assets/bee.jpg'; // Make sure this matches your image file
+import './Signup.css'; // You’ll create this file next
 
 function Signup() {
   const [username, setUsername] = useState('');
@@ -20,33 +22,36 @@ function Signup() {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
-      <form onSubmit={handleSignup}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        /><br />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        /><br />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        /><br />
-        <button type="submit">Signup</button>
-      </form>
-      {message && <p>{message}</p>}
+    <div className="signup-container">
+      <div className="signup-card">
+        <img src={beeImage} alt="Bee" className="bee-image" />
+        <h2>🐝 Join PollinatorWatch</h2>
+        <form onSubmit={handleSignup}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          /><br />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          /><br />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          /><br />
+          <button type="submit">Signup</button>
+        </form>
+        {message && <p className="message">{message}</p>}
+      </div>
     </div>
   );
 }

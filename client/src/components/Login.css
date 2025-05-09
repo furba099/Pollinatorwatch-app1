@@ -1,0 +1,52 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #fefcea, #f1da36);
+  }
+  
+  .login-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+  }
+  
+  .bee-image {
+    width: 80px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+  }
+  
+  .login-card input {
+    width: 90%;
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .login-card button {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #ffca28;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .login-card button:hover {
+    background-color: #f4b400;
+  }
+  
+  .message {
+    margin-top: 1rem;
+    color: green;
+  }
+  

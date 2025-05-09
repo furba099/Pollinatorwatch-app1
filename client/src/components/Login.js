@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import beeImage from '../assets/bee.jpg'; // make sure bee.jpg exists in src/assets/
+import './Login.css'; // make sure you also create this CSS file
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -19,28 +21,32 @@ function Login() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        /><br />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        /><br />
-        <button type="submit">Login</button>
-      </form>
-      {message && <p>{message}</p>}
+    <div className="login-container">
+      <div className="login-card">
+        <img src={beeImage} alt="Bee" className="bee-image" />
+        <h2>🐝 Login to PollinatorWatch</h2>
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          /><br />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          /><br />
+          <button type="submit">Login</button>
+        </form>
+        {message && <p className="message">{message}</p>}
+      </div>
     </div>
   );
 }
 
 export default Login;
+
